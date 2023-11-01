@@ -35,6 +35,7 @@ A binary named 'wcc' will be generated.
 Additionally, the build should create a `python_extension.cpython-...` file. This can be used as follows:
 
 ```python
-
+import python_extension
+python_extension.add(3, 5)
 ```
 
