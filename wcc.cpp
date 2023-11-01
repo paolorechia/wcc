@@ -2,7 +2,6 @@
 #include <iostream>
 #include <fstream>
 
-
 int count_bytes(std::ifstream* file) {
     int count = 0;
     std::string line;
