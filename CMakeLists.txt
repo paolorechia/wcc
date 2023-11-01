@@ -15,10 +15,10 @@ set(CMAKE_CXX_STANDARD, 11)
 
 project(wcc VERSION 0.1)
 
-add_executable(wcc wcc.cpp)
+add_executable(wcc wcc.cpp count.cpp count.h.in)
 
 add_subdirectory(pybind11)
-pybind11_add_module(python_extension python_extension.cpp)
+pybind11_add_module(python_extension python_extension.cpp count.cpp count.h.in)
 
 CPMAddPackage("gh:jarro2783/cxxopts@3.1.1")
 target_compile_features(wcc PUBLIC cxx_std_11)

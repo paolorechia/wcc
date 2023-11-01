@@ -1,16 +1,7 @@
 #include <cxxopts.hpp>
 #include <iostream>
 #include <fstream>
-
-int count_bytes(std::ifstream* file) {
-    int count = 0;
-    std::string line;
-    while (std::getline(*file, line)) {
-        count += line.size() + 1;
-    }
-    return count;
-}
-
+#include "count.h.in"
 
 int main(int argc, char *argv[]) { 
     cxxopts::Options options("wcc", "Cheap copy of wc");
@@ -28,10 +19,7 @@ int main(int argc, char *argv[]) {
     }
     auto filepath = parsed["file"].as<std::string>();
 
-    std::ifstream InputFile(filepath);
-    int character_count = count_bytes(&InputFile);
-    InputFile.close();
-
+    int character_count = count_bytes(filepath);
     std::cout << character_count << std::endl;
     
 }
