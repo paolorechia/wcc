@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD, 11)
 
 project(wcc VERSION 0.1)
 
-add_executable(wcc src/wcc.cpp src/count.cpp src/count.h.in)
+add_executable(wcc src/wcc.cpp src/count.cpp src/count.h.in src/opt_parser.cpp src/opt_parser.h.in)
 
 add_subdirectory(pybind11)
 pybind11_add_module(python_extension src/python_extension.cpp src/count.cpp src/count.h.in)
