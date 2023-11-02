@@ -12,4 +12,3 @@ int count_bytes(std::string filepath) {
     InputFile.close();
     return count;
 }
-
